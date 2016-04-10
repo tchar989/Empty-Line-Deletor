@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-
 int main()
 {
 	int length = 0;
@@ -9,6 +8,7 @@ int main()
 	string fPath;
 	cout << "Type complete path for file: " << endl;
 	cin >> fPath;
+	cout << endl;
 	fstream fs;
 	fs.open(fPath,ios_base::in|ios_base::out);
 	if(fs.fail())
@@ -34,7 +34,6 @@ int main()
 			arlen *=2;
 		}
 	}
-	//remove any consecutive \n
 	int x = 0;
 	int cont = 1;
 	for(int i = 0; i < length-1; i++)
@@ -54,23 +53,8 @@ int main()
 		}
 		if(z[i] == '\n'){
 			cont = 1;
-		}
-		
-		
+		}	
 	}
-
-		
-
-
-
-
-
-
-
-
-
-
-	
 	length-=x;
 	ofstream of;
 	of.open(fPath);
